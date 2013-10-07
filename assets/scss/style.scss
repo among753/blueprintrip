@@ -1,0 +1,151 @@
+@import "compass";
+
+body {
+	-webkit-text-size-adjust: 100%;/* fix scale bug */
+}
+
+/* 画面全体 */
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+
+
+#header {
+
+}
+@media (max-width: 767px) {
+	#header {
+		.navbar-header {
+			position: relative;
+			.page-title {
+				position: absolute;
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+#map-canvas {
+	height: 100%;
+	//-webkit-filter: blur(2.5px) opacity(.5);
+	//z-index: -1;
+}
+
+
+#tab-bar {
+	#balloon-button {
+		width: 100%;
+		margin-top: 6px;
+	}
+	#balloon {
+		#directionsPanel {
+			max-height: 200px;
+			overflow: auto;
+		}
+	}
+}
+
+@media (min-width: 320px) {
+	#tab-bar {
+		.navbar-header {
+			button.navbar-toggle {
+			}
+			.navbar-brand {
+				padding: 9px 18px;
+				font-size: 26px;
+				line-height: 26px;
+			}
+		}
+	}
+
+}
+
+/* theme color ---------------------------------------- */
+$color-text : rgb(255, 253, 236);
+
+#header,
+#tab-bar {
+	&.navbar.navbar-bpt {
+		background: rgba(60, 108, 71, 0.8);
+
+		a {
+			color: $color-text;
+			&:hover,
+			&:focus,
+			&:active
+			{
+				color: #7aba7b;
+			}
+		}
+		.nav>li>a:hover,
+		.nav>li>a:focus,
+		.nav .open>a,
+		.nav .open>a:hover,
+		.nav .open>a:focus {
+			background-color: rgba(43, 43, 43, 0.55);
+		}
+		.nav {
+			.dropup .caret,
+			.dropdown .caret {
+				border-bottom: 4px solid rgb(255, 255, 255);
+			}
+			a:hover .caret {
+				border-top-color: #7aba7b;
+				border-bottom-color: #7aba7b;
+			}
+		}
+		button {
+			background: rgba(0, 204, 255, 0.4);
+			color: $color-text;
+			&:hover,
+			&:active {
+			}
+		}
+		.navbar-toggle {
+			//border: 1px solid rgb(255, 255, 255);
+			margin: 9px 15px 0px 0;
+			padding: 6px;
+			.icon-bar {
+				background-color: $color-text;
+				width: 26px;
+				height: 3px;
+			}
+			.icon-bar+.icon-bar {
+				margin-top: 5px;
+			}
+		}
+	}
+
+}
+#tab-bar {
+	&.navbar.navbar-bpt {
+		border-width: 1px 0 0 0;
+	}
+	#balloon {
+		#directionsPanel {
+			.adp {
+				table {
+					color: $color-text;
+					border-radius: 4px;
+					&.adp-placemark {
+						background: rgba(63, 58, 53, 0.74);
+						border: 0;
+						td {
+							padding: 3px;
+						}
+
+					}
+				}
+			}
+
+		}
+	}
+
+}
+
+
+
+
+
+
