@@ -6,7 +6,75 @@
 jQuery(function(){
     // Document is ready
 //    initialize();
+      $('#flickable1').flickable();
+      $('#directionsPanel').flickable();
 });
+
+$(function() {
+    var events = ['dragStart', 'drag', 'dragStop', 'flick', 'scrollBack', 'change'],
+        items = {},
+        counts = {},
+        countElements = {},
+        updated;
+
+    $.each(events, function(i, name) {
+        items[name] = $('#event-' + name.toLowerCase());
+        counts[name] = 0;
+        countElements[name] = $('.count', items[name]);
+    });
+
+    function updateCounter(name) {
+        var item = items[name]
+        if (!item.hasClass('notice')) {
+            updated && updated.removeClass('notice');
+            item.addClass('notice');
+            updated = item;
+        }
+        countElements[name].html(++counts[name]);
+    }
+
+    $('#flickable3').flickable({
+        section: 'li',
+        dragStart: function() {
+            updateCounter('dragStart');
+        },
+        drag: function() {
+            updateCounter('drag');
+        },
+        dragStop: function() {
+            updateCounter('dragStop');
+        },
+        flick: function() {
+            updateCounter('flick');
+        },
+        scrollBack: function() {
+            updateCounter('scrollBack');
+        },
+        change: function() {
+            updateCounter('change');
+        }
+    });
+
+    // Toggle section
+    var element = $('#flickable3'),
+        setButton = $('#set_section'),
+        unsetButton = $('#unset_section');
+
+    unsetButton.click(function() {
+        element.flickable('option', 'section', null);
+        $(this).attr('disabled', true);
+        setButton.attr('disabled', false);
+    });
+    setButton.click(function() {
+        element.flickable('option', 'section', 'li');
+        $(this).attr('disabled', true);
+        unsetButton.attr('disabled', false);
+    }).click();
+});
+
+
+
+
 google.maps.event.addDomListener(window, 'load', initialize);
 
 var rendererOptions = {
@@ -28,6 +96,7 @@ function initialize() {
 
     // set panel
     directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+//    directionsDisplay.setPanel($(".ui-flickable-content").get(0));
     directionsDisplay.setMap(map);
     loadXml();
 
@@ -72,6 +141,7 @@ function loadXml() {
                 i++;
             });
             calcRoute(data);
+
         }
     });
 }
@@ -108,6 +178,13 @@ function calcRoute(data) {
             route.legs[o].end_address = "<strong>" + data['destination']['name'] +"</strong><br />"+ data['destination']['address'];//最終地点の吹き出しを設定（directionsPanelもこれになっちゃう）
 
             directionsDisplay.setDirections(response);
+
+//            google.maps.event.addListener(directionsDisplay, 'directions_changed', function() {
+//                alert("reddddd");
+//            });
+
+
         }
     });
+
 }
