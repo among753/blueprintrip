@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<list_database>
+<origin>
+	<location>35.793206,139.286213</location>
+	<address>東京都青梅市師岡2-360-9</address>
+	<name>めんや たも</name>
+	<tel></tel>
+	<open></open>
+	<closed></closed>
+</origin>
+<waypoints>
+	<location>35.792166,139.286816</location>
+	<address>東京都青梅市野上町２丁目３−８ ドリームベース野上 1F</address>
+	<name>麺楽</name>
+	<tel></tel>
+	<open></open>
+	<closed></closed>
+</waypoints>
+<waypoints>
+	<location>35.781892,139.283971</location>
+	<address>東京都青梅市河辺町６丁目１２−８</address>
+	<name>紀の家</name>
+	<tel></tel>
+	<open></open>
+	<closed></closed>
+</waypoints>
+<waypoints>
+	<location>35.778979,139.291036</location>
+	<address>東京都青梅市河辺町６丁目１２−８</address>
+	<name>梅浜亭</name>
+	<tel></tel>
+	<open></open>
+	<closed></closed>
+</waypoints>
+<waypoints>
+	<location>35.796961,139.298551</location>
+	<address>東京都青梅市今寺４丁目５−２４</address>
+	<name>担々麺杉山</name>
+	<tel></tel>
+	<open></open>
+	<closed></closed>
+</waypoints>
+<waypoints>
+	<location>35.787093,139.304994</location>
+	<address>東京都青梅市新町５丁目３−７</address>
+	<name>いつ樹</name>
+	<tel></tel>
+	<open></open>
+	<closed></closed>
+</waypoints>
+<destination>
+	<location>35.735407,139.32919</location>
+	<address>東京都福生市志茂４９</address>
+	<name>いぬい</name>
+	<tel></tel>
+	<open></open>
+	<closed></closed>
+</destination>
+</list_database>
+
+
+
